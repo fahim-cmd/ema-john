@@ -15,14 +15,16 @@ const Shop = () => {
         setCart(newCart);
         const sameProduct = newCart.filter(pd => pd.key === eachProduct.key )
         const count = sameProduct.length;
+       
         addToDatabaseCart( eachProduct.key, count)
+        // console.log(eachProduct.key, count);
     }
    
     return (
         <div className="shop-container"> 
             <div className="product-container">                
                 {
-                    products.map(product => <Product handleAddProduct = {handleAddProduct} showAddToCart = {true } product={product}></Product>)
+                    products.map(product => <Product handleAddProduct = {handleAddProduct} showAddToCart = {true } key={product.key} product={product}></Product>)
                 }                
             </div>
             <div className="cart-container">
