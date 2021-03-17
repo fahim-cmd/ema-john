@@ -1,0 +1,10 @@
+.cardStyle{
+    /* display: inline-block; */
+    /* margin-left:100px; */
+}
+.postDetail{
+    box-shadow: 10px 10px 20px lightgray;
+    margin: 20px;
+    padding: 15px;
+    width: 20%;
+}
