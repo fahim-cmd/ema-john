@@ -7,17 +7,17 @@ const Cart = (props) => {
     let total = 0;
     for (let i = 0; i < cart.length; i++) {
         const product = cart[i];
-        total = total + product.price * product.quantity;
+        total = total + product.price * product.quantity || 1;
     }
 
     let shipping = 0;
-    if(total > 50){
+    if (total > 50) {
         shipping = 0;
     }
-    else if( total > 10 && total < 50){
+    else if (total > 10 && total < 50) {
         shipping = 8.89;
     }
-    else if(total > 0 && total < 10){
+    else if (total > 0 && total < 10) {
         shipping = 15.22;
     }
 
@@ -38,10 +38,10 @@ const Cart = (props) => {
             <h4><small>Shipping Cost: {shipping}</small></h4>
             <h4>Tax + Vat: {formatNumber(tax)}</h4>
             <h4>Total Price: {formatNumber(grandTotal)}</h4>
-            <br/>
-           {
-               props.children
-           }
+            <br />
+            {
+                props.children
+            }
         </div>
     );
 };
